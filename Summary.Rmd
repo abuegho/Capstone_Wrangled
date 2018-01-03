@@ -13,8 +13,7 @@ Many variables have null values, but not all of them are critical enough to weig
 
 "Make" also had many NA values, which indicates either that the car was unknown, or a vehicle was not involved in the violation. "Make" also had over 7000 thousand observations that was marked as **NONE**, which is most likely pedestrain violations, I am lead to such conclusion as most of these violations have been registered by "Foot Patrol"
 ```{r message=TRUE}
-Traffic_Violations%>% 
-  filter(Traffic_Violations$Make == "NONE")%>% 
-  select(Description, Make, `Arrest Type`)
+select(filter(Traffic_Violations, Traffic_Violations$Make == "NONE"),
+       Description, Make, `Arrest Type`)
 ```
 
