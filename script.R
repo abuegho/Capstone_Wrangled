@@ -21,6 +21,6 @@ Traffic_W = filter(Traffic_W, is.na(Traffic_W$`DL State`) == F)
 
 Traffic_W = Traffic_W %>% 
   filter(HAZMAT == "No") %>% 
-  select(-c(HAZMAT, Article, Agency))
+  select(-c(HAZMAT, Article, Agency, SubAgency))
 
 write.csv(Traffic_W, file = "Traffic_W.csv")
