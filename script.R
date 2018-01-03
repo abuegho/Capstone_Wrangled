@@ -1,3 +1,6 @@
+library(dplyr)
+library(tidyr)
+
 ## Clean up your column names to be simple, short and descriptive
 
 Traffic_W = rename(Traffic_Violations, Date = "Date Of Stop",
@@ -19,3 +22,5 @@ Traffic_W = filter(Traffic_W, is.na(Traffic_W$`DL State`) == F)
 Traffic_W = Traffic_W %>% 
   filter(HAZMAT == "No") %>% 
   select(-c(HAZMAT, Article, Agency))
+
+write.csv(Traffic_W, file = "Traffic_W.csv")
