@@ -3,8 +3,8 @@ title: "Summary of Wrangling"
 author: "Fadi"
 date: "3 January 2018"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ### Renaming:
