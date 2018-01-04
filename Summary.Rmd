@@ -21,7 +21,7 @@ library(dplyr)
 load(file="Traffic_Violations.RData")
 ```
 
-```{r message=FALSE, warning=FALSE}
+```{r echo=TRUE, message=FALSE, warning=FALSE}
 Traffic_Violations %>% 
   filter(Traffic_Violations$Make == "NONE") %>% 
   select(Description, Make, `Arrest Type`)
