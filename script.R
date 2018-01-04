@@ -23,4 +23,6 @@ Traffic_W = Traffic_W %>%
   filter(HAZMAT == "No") %>% 
   select(-c(HAZMAT, Article, Agency, SubAgency))
 
+Traffic_W = Traffic_W[order(as.Date(Traffic_W$Date, format = ("%d/%m/%Y"))), ]
+
 write.csv(Traffic_W, file = "Traffic_W.csv")
