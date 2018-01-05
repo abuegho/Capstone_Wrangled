@@ -8,10 +8,9 @@ Traffic_W = rename(Traffic_Violations, Date = "Date Of Stop",
 
 ## Check for missing values and decide what you want to do about them
 
-Traffic_W = filter(Traffic_W, is.na(Traffic_W$Description) == F)
-Traffic_W = filter(Traffic_W, is.na(Traffic_W$Make) == F)
-Traffic_W = filter(Traffic_W, Traffic_W$Make != "NONE")
-Traffic_W = filter(Traffic_W, is.na(Traffic_W$`DL State`) == F)
+Traffic_W <- Traffic_W %>% 
+  filter(!is.na(Description), !is.na(Make), 
+         Make != "NONE", !is.na(`DL State`))
 
 # over 79,000 entries have Null Geolocations
 
